@@ -9,7 +9,7 @@
 
 	<context:annotation-config />
 	
-	<context:component-scan base-package="cn.longkai.struts" />
+	<context:component-scan base-package="cn.netcenter.datacenter" />
 
 	<tx:annotation-driven />
 	

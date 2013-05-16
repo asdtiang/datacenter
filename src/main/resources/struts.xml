@@ -13,7 +13,7 @@
 			<result type="freemarker">register.html</result>
 			<result name="error" type="freemarker">error.html</result>
 		</action>
-		<action name="">
+		<action name="index">
 			<result>index.html</result>
 		</action>
 	</package>
