@@ -1,5 +1,6 @@
 s2sh
 ====
+maven管理，直接导入myeclipse10就可以了，myeclipse10集成了maven,这个比较好。
 
 strut2，hibernate4，jpa2，spring3的一个基本架构
 dao层采用spring data和jpa一起实现。
