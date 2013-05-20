@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="machineCabinet" extends="struts-default" namespace="/">
+		<action name="machineCabinetCreate" class="machineCabinetController"
+			method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">machineCabinetShow</param>
+				<param name="id">${machineCabinet.id}</param>
+			</result>
+			<result name="to_view">/machineCabinet/create.jsp</result>
+			<result name="input">/machineCabinet/create.jsp</result>
+		</action>
+		
+		<action name="machineCabinetShow" class="machineCabinetController"
+			method="show">
+			<result name="success">/machineCabinet/show.jsp</result>
+		</action>
+		<action name="machineCabinetUpdate" class="machineCabinetController"
+			method="update">
+			<result name="to_view">/machineCabinet/edit.jsp</result>
+			<result name="success"  type="redirectAction">
+				<param name="actionName">machineCabinetShow</param>
+				<param name="id">${machineCabinet.id}</param>
+			</result>
+		</action>
+		<action name="machineCabinetDelete" class="machineCabinetController"
+			method="delete">
+			<result name="to_view">/machineCabinet/edit.jsp</result>
+		</action>
+		<action name="machineCabinetList" class="machineCabinetController"
+			method="list">
+			<result name="success">/machineCabinet/list.jsp</result>
+		</action>
+		
+	</package>
+</struts>

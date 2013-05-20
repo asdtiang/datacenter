@@ -1,12 +1,11 @@
 package cn.netcenter.datacenter.controller;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.netcenter.datacenter.entity.User;
-import cn.netcenter.datacenter.model.UserService;
+import cn.netcenter.datacenter.service.ShareService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,11 +17,16 @@ public class UserController extends ActionSupport {
 
 	private int id;
 	private User user;
-	private UserService userService;
+	@Autowired
+	private ShareService shareService;
 
-	public String add() {
-		
-		userService.save(user);
+	public String save() {
+		shareService.save(user);
+		return SUCCESS;
+	}
+	
+	public String update() {
+		shareService.update(user);
 		return SUCCESS;
 	}
 	
@@ -40,15 +44,6 @@ public class UserController extends ActionSupport {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public UserService getUserService() {
-		return userService;
-	}
-
-	@Inject
-	public void setUserService(UserService userService) {
-		this.userService = userService;
 	}
 
 }

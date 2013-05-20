@@ -10,16 +10,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class MachineCabinet {
 	private int id;
+	/**
+	 * 机柜名
+	 */
+	private String name;
 	private MachineRoom machineRoom;
+	/**
+	 * 位置
+	 */
 	private String location;
     private int high;
     /**
      * 可用空间
      */
     private int spaceAvailable;
+    /**
+     * 机器数量,设备数
+     */
 	private int machineNum;
 	/**
 	 * 机器列表
@@ -40,7 +51,7 @@ public class MachineCabinet {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@ManyToOne(cascade=CascadeType.ALL,optional = false)
+	@ManyToOne(cascade=CascadeType.REFRESH,optional = false)
 	@JoinColumn(name="room_id")
 	public MachineRoom getMachineRoom() {
 		return machineRoom;
@@ -110,6 +121,14 @@ public class MachineCabinet {
 
 	public void setPriority(int priority) {
 		this.priority = priority;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 

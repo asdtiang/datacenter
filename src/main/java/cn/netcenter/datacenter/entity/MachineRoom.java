@@ -17,7 +17,13 @@ import javax.persistence.OneToMany;
 public class MachineRoom {
 	private int id;
 	private String name;
+	/**
+	 *面积
+	 */
 	private int area;
+	/**
+	 * 房间号
+	 */
 	private int roomNum;
 	/**
 	 * 温度
@@ -43,7 +49,7 @@ public class MachineRoom {
 	/**
 	 * 总的容量数，可用空间为 总容量-cabinets.size()/总容量
 	 */
-	private int sumSiz;
+	private int sumSize;
 	
 	/**
 	 * 机柜数量
@@ -86,12 +92,7 @@ public class MachineRoom {
 	public void setCabinetNum(int cabinetNum) {
 		this.cabinetNum = cabinetNum;
 	}
-	public int getArea() {
-		return area;
-	}
-	public void setArea(int area) {
-		this.area = area;
-	}
+	
 	public int getRoomNum() {
 		return roomNum;
 	}
@@ -128,14 +129,16 @@ public class MachineRoom {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public int getSumSiz() {
-		return sumSiz;
+	public int getSumSize() {
+		return sumSize;
 	}
-	public void setSumSiz(int sumSiz) {
-		this.sumSiz = sumSiz;
+	public void setSumSize(int sumSize) {
+		this.sumSize = sumSize;
 	}
-	
-	
-	
-
+	public int getArea() {
+		return area;
+	}
+	public void setArea(int area) {
+		this.area = area;
+	}
 }

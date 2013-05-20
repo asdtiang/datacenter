@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="machineRoom" extends="struts-default" namespace="/">
+		<action name="machineRoomCreate" class="machineRoomController"
+			method="save">
+			<result name="to_view">/machineRoom/create.jsp</result>
+			<result name="input">/machineRoom/create.jsp</result>
+		</action>
+		<action name="machineRoomShow" class="machineRoomController"
+			method="show">
+			<result name="success">/machineRoom/show.jsp</result>
+		</action>
+		<action name="machineRoomUpdate" class="machineRoomController"
+			method="update">
+			<result name="to_view">/machineRoom/edit.jsp</result>
+		</action>
+		<action name="machineRoomDelete" class="machineRoomController" method="delete">
+		</action>
+		<action name="machineRoomList" class="machineRoomController"
+			method="list">
+			<result name="success">/machineRoom/list.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,4 +1,4 @@
-package cn.netcenter.datacenter.model;
+package cn.netcenter.datacenter.service;
 
 import cn.netcenter.datacenter.entity.User;
 
